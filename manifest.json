@@ -3,15 +3,19 @@
   "version": "1.0",
   "description": "Build an Extension!",
   "manifest_version": 2,
+
   "content_scripts": [
     {
       "matches": [
-        "https://www.target.com/c/fresh-flowers/-/N-2dei4"
+        "*://www.target.com/c/fresh-flowers/*"
       ],
       "js": ["content.js"]
     }
   ],
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
+
+
+  "page_action": {
+    "default_title": "Small Business Alternatives",
+    "default_popup": "popup.html"
+  }
 }
