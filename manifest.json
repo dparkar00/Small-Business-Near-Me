@@ -1,6 +1,17 @@
 {
-  "name": "Getting Started Example",
+  "name": "Small Business Alternative",
   "version": "1.0",
   "description": "Build an Extension!",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.target.com/c/fresh-flowers/-/N-2dei4"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
 }
