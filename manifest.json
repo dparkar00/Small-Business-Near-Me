@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://www.target.com/c/fresh-flowers/*"
+        "*://www.target.com/*"
       ],
       "js": ["content.js"]
     }
