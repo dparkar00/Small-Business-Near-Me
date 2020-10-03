@@ -14,12 +14,13 @@
   ],
 
   "icons": {
-    "16":"icon16", "32": "icon32.jpg"
+    "16":"icon16.jpg", "32": "icon32.jpg"
   },
 
   "browser_action": {
-    "default_icon": { "16":"icon16", "32": "icon32.jpg"
-    }
+    "default_icon": { "16":"icon16.jpg", "32": "icon32.jpg"
+    },
+    "default_page": "popup.html"
   }
-  
+
 }
