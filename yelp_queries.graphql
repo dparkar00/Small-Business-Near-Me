@@ -1,0 +1,44 @@
+
+const axios = require("axios")
+
+let API_KEY = "4ZyIn9I-Z4qHjkuO6u7wyxQVKRS1kzY35oslIMNVClmtNvF_yYyP6un-fQcwG1_BaDH-l0vlQGt01U0wadPNDEJlSeQhjG4DRUVyd-3u7bRik8R8C3xY5PLAfMF4X3Yx"
+let yelpGQL = axios.create({
+  url: "https://api.yelp.com/v3/graphql",
+  headers: {
+    Authorization: `Bearer ${API_KEY}`,
+    "Content-type": "application/json",
+  },
+  method: "POST",
+})
+
+yelpGQL({
+  data: JSON.stringify({
+    query: `{
+    search(term: "coffee",
+            location: "kyoto",
+            limit: 10) {
+        business {
+            name
+        }
+    }
+}`,
+  }),
+}).then(({ data }) => {
+  // Double data: data is what Axios puts the response body in, but it's also what GraphQL returns
+  let businesses = data.data.search.business
+  businesses.forEach((b) => {
+    console.log("Name: ", b.name)
+  })
+})
+
+query SearchYelp($term:String!, $location:String!) {
+  search(term: $term, location: $location, limit: 5) {
+    total
+    business {
+        name
+        rating
+        photos
+        url          
+    }
+    }
+}
