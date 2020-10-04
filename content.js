@@ -12,7 +12,7 @@ keywords.forEach(term => {
         link.value = ('https://www.yelp.com/search?find_desc=' + term);
         elem.appendChild(document.createTextNode(words));
         
-        elem.style.background-color="#ADD8E6";
+        elem.style.background_color="#ADD8E6";
         document.body.insertBefore(elem, mainC);
         document.body.append(link, mainC);
     }
