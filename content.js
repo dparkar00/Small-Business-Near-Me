@@ -8,6 +8,8 @@ keywords.forEach(term => {
         var elem = document.createElement("div");
         var mainC = document.getElementById("root");
         elem.appendChild(document.createTextNode("Hello there!"));
+        
+        elem.style.color="#F0FFFF";
         document.body.insertBefore(elem, mainC);
     }
 });
