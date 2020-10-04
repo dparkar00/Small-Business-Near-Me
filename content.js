@@ -11,6 +11,8 @@ keywords.forEach(term => {
         var link = document.createAttribute("href");
         link.value = ('https://www.yelp.com/search?find_desc=' + term);
         elem.appendChild(document.createTextNode(words));
+        
+        elem.style.color="#F0FFFF";
         document.body.insertBefore(elem, mainC);
         document.body.append(link, mainC);
     }
