@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://www.target.com/*"
+        "<all_urls>"
       ],
       "js": ["content.js"]
     }
@@ -20,7 +20,7 @@
   "browser_action": {
     "default_icon": { "16":"icon16.jpg", "32": "icon32.jpg"
     },
-    "default_page": "popup.html"
+    "default_title": "Small Biz",
+    "default_popup": "popup.html"
   }
-
 }

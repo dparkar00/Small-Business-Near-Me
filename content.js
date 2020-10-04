@@ -7,8 +7,12 @@ keywords.forEach(term => {
         console.log('in here');
         var elem = document.createElement("div");
         var mainC = document.getElementById("root");
-        elem.appendChild(document.createTextNode("Hello there!"));
+        let words = 'Are you looking for ' + term + '?\nHere are some small businesses near you!\n';
+        var link = document.createAttribute("href");
+        link.value = ('https://www.yelp.com/search?find_desc=' + term);
+        elem.appendChild(document.createTextNode(words));
         document.body.insertBefore(elem, mainC);
+        document.body.append(link, mainC);
     }
 });
 
